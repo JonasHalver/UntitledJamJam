@@ -32,22 +32,22 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal") > 0 && !pushing)
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
 
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal") < 0 && !pushing)
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (Input.GetAxis("Vertical") > 0)
+        if (Input.GetAxis("Vertical") > 0 && !pushing)
         {
             anim.SetBool("up", true);
             transform.GetChild(0).transform.localScale = new Vector3(1, -1, 1);
         }
-        if (Input.GetAxis("Vertical") < 0)
+        if (Input.GetAxis("Vertical") < 0 && !pushing)
         {
             anim.SetBool("up", false);
             transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);

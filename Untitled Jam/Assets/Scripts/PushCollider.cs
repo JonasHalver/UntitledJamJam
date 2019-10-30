@@ -22,13 +22,13 @@ public class PushCollider : MonoBehaviour
         {
             if (canPush)
             {
-                GetComponentInParent<PlayerController>().pushing = true;
+               transform.parent.GetComponentInParent<PlayerController>().pushing = true;
                 pushing = true;
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            GetComponentInParent<PlayerController>().pushing = false;
+            transform.parent.GetComponentInParent<PlayerController>().pushing = false;
             pushing = false;
         }
 
@@ -44,16 +44,22 @@ public class PushCollider : MonoBehaviour
         if(other.tag == "PushObject")
         {
             canPush = true;
-            pushObject = other.gameObject;
+            if (!pushing)
+            {
+                pushObject = other.gameObject;
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "PushPosition")
+        if (other.tag == "PushObject")
         {
             canPush = false;
-            pushObject = null;
+            if (!pushing)
+            {
+                pushObject = null;
+            }
         }
     }
 
