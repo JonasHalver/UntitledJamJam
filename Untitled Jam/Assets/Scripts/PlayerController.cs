@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed;
+    public float pushSpeed;
+    public bool pushing;
+    float currentMoveSpeed;
     Rigidbody2D rb;
     Animator anim;
     // Start is called before the first frame update
@@ -19,7 +22,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        rb.MovePosition(new Vector2(rb.position.x + Input.GetAxis("Horizontal")*moveSpeed, rb.position.y + Input.GetAxis("Vertical")* moveSpeed));
+        if (!pushing)
+        {
+            rb.MovePosition(new Vector2(rb.position.x + Input.GetAxis("Horizontal") * moveSpeed, rb.position.y + Input.GetAxis("Vertical") * moveSpeed));
+        }
+        else
+        {
+            rb.MovePosition(new Vector2(rb.position.x + Input.GetAxis("Horizontal") * pushSpeed, rb.position.y + Input.GetAxis("Vertical") * pushSpeed));
+        }
+
 
         if (Input.GetAxis("Horizontal") > 0)
         {
@@ -34,10 +45,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis("Vertical") > 0)
         {
             anim.SetBool("up", true);
+            transform.GetChild(0).transform.localScale = new Vector3(1, -1, 1);
         }
         if (Input.GetAxis("Vertical") < 0)
         {
             anim.SetBool("up", false);
+            transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);
+
         }
 
     }
