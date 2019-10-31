@@ -11,11 +11,15 @@ public class PlayerController : MonoBehaviour
     float currentMoveSpeed;
     Rigidbody2D rb;
     Animator anim;
+    Transform sprite;
+    Transform pushCollider;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        sprite = transform.GetChild(1);
+        anim = sprite.GetComponent<Animator>();
+        pushCollider = transform.GetChild(0);
     }
 
     // Update is called once per frame
@@ -31,26 +35,25 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(new Vector2(rb.position.x + Input.GetAxis("Horizontal") * pushSpeed, rb.position.y + Input.GetAxis("Vertical") * pushSpeed));
         }
 
-
         if (Input.GetAxis("Horizontal") > 0 && !pushing)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            sprite.localScale = new Vector3(1, 1, 1);
         }
 
         if (Input.GetAxis("Horizontal") < 0 && !pushing)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            sprite.localScale = new Vector3(-1, 1, 1);
         }
 
         if (Input.GetAxis("Vertical") > 0 && !pushing)
         {
             anim.SetBool("up", true);
-            transform.GetChild(0).transform.localScale = new Vector3(1, -1, 1);
+            pushCollider.localScale = new Vector3(1, -1, 1);
         }
         if (Input.GetAxis("Vertical") < 0 && !pushing)
         {
             anim.SetBool("up", false);
-            transform.GetChild(0).transform.localScale = new Vector3(1, 1, 1);
+            pushCollider.localScale = new Vector3(1, 1, 1);
 
         }
 
