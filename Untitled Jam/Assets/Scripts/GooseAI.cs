@@ -9,9 +9,12 @@ public class GooseAI : MonoBehaviour
     public Seeker seeker;
     public Rigidbody2D rb;
 
-    public float acceptableDistanceToPlayer = 3;
+    [Range(1,10)]
+    public float playerRadius = 3;
+    public static float acceptableDistanceToPlayer = 3;
 
-    public float moveSpeed = 2;
+    public float moveSpeed = 2, moveSpeedMod = 1;
+    public float maxWalkDistance = 10;
 
     Vector2 lastPos = new Vector2();
 
@@ -30,14 +33,19 @@ public class GooseAI : MonoBehaviour
     public AudioSource aS;
     public AudioClip honk;
 
+    bool fleeing;
+
     // Start is called before the first frame update
     void Start()
     {
         aS = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
+        maxWalkDistance = (acceptableDistanceToPlayer * 2) - 0.1f;
     }
 
     private void FixedUpdate()
     {
+        acceptableDistanceToPlayer = playerRadius;
         if (path != null)
         {
             IdleMovement();
@@ -66,19 +74,42 @@ public class GooseAI : MonoBehaviour
             case State.Roaming:
                 if (path == null)
                 {
-                    CreateIdleDestination();                    
+                    if (Random.Range(0, 10) == 0)
+                        currentState = State.Scaring;
+                    else
+                        CreateIdleDestination();                    
                 }
                 if (canAttack)
+                {
                     if ((transform.position - player.transform.position).sqrMagnitude < acceptableDistanceToPlayer * acceptableDistanceToPlayer)
                         AttackCheck();
+                }
+                else if (!fleeing)
+                    if ((transform.position - player.transform.position).sqrMagnitude < acceptableDistanceToPlayer * acceptableDistanceToPlayer)
+                    {
+                        path = null;
+                        Flee();
+                        StartCoroutine(FleeDelay());
+                    }
+
                 break;
             case State.Attacking:
                 if (path == null)
                     CreateAttackDestination();
                 break;
             case State.Scaring:
+                if (path == null)
+                    CreateScareDestination();
+                if (canAttack)
+                    if ((transform.position - player.transform.position).sqrMagnitude < acceptableDistanceToPlayer * acceptableDistanceToPlayer)
+                        AttackCheck();
                 break;
         }
+
+        if ((transform.position - player.transform.position).sqrMagnitude < acceptableDistanceToPlayer)
+            moveSpeedMod = 3;
+        else
+            moveSpeedMod = 1;
     }
 
     public void CreateIdleDestination()
@@ -86,9 +117,9 @@ public class GooseAI : MonoBehaviour
         Vector2 newPos = rb.position;
         for (int i = 0; i < 1000; i++)
         {
-            newPos = rb.position + Random.insideUnitCircle * 4;
+            newPos = rb.position + Random.insideUnitCircle * maxWalkDistance;
 
-            if (PathNotNearPlayer(newPos))
+            if (PathNotNearPlayer(newPos) && PathNotFarFromPlayer(newPos))
                 break;
         }
         if (seeker.IsDone())
@@ -96,6 +127,27 @@ public class GooseAI : MonoBehaviour
             seeker.StartPath(rb.position, newPos, OnPathCompleteIdle);
             canAttack = true;
         }
+    }
+
+    IEnumerator FleeDelay()
+    {
+        fleeing = true;
+        yield return new WaitForSecondsRealtime(0.5f);
+        fleeing = false;
+    }
+
+    public void Flee()
+    {
+        Vector2 newPos = Vector2.zero;
+
+        newPos = ((rb.position - (Vector2)player.transform.position).normalized * acceptableDistanceToPlayer * 2) + Random.insideUnitCircle * 3;
+
+        if (seeker.IsDone())
+        {
+            seeker.StartPath(rb.position, newPos, OnPathCompleteAttack);
+            currentState = State.Roaming;
+        }
+
     }
 
     void OnPathCompleteIdle(Path p)
@@ -118,7 +170,13 @@ public class GooseAI : MonoBehaviour
         if (seeker.IsDone())
             seeker.StartPath(rb.position, newPos, OnPathCompleteAttack);
     }
-
+    
+    void CreateScareDestination()
+    {
+        Vector2 newPos = (rb.position - (Vector2)player.transform.position).normalized * (acceptableDistanceToPlayer - 1) + Random.insideUnitCircle * 2;
+        if (seeker.IsDone())
+            seeker.StartPath(rb.position, newPos, OnPathCompleteAttack);
+    }
     void OnPathCompleteAttack(Path p)
     {
         if (!p.error)
@@ -136,26 +194,38 @@ public class GooseAI : MonoBehaviour
         
         if (Random.Range(0, 10) == 0)
         {
+            path = null;
             currentState = State.Attacking;
+            
+            canAttack = false;
         }
         else
         {
             path = null;
             canAttack = false;
+            Flee();
         }
     }
 
     bool PathNotNearPlayer(Vector3 destination)
     {
-        if (Vector3.Distance(destination, player.transform.position) < acceptableDistanceToPlayer)
+        if ((destination - player.transform.position).sqrMagnitude < acceptableDistanceToPlayer * acceptableDistanceToPlayer)
             return false;
         else
             return true;
     }
 
+    bool PathNotFarFromPlayer(Vector3 destination)
+    {
+        if ((destination - player.transform.position).sqrMagnitude < (acceptableDistanceToPlayer * acceptableDistanceToPlayer)* 4)
+            return true;
+        else
+            return false;
+    }
+
     public void IdleMovement()
     {
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + direction * moveSpeed * moveSpeedMod * Time.fixedDeltaTime);
         rb.SetRotation(0);
     }
 }

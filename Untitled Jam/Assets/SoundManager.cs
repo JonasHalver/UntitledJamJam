@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource low, medium, high, intense;
 
     [Range(1, 10)]
-    public int intensity = 1;
+    public static int intensity = 1;    
 
     [Range(0f, 1f)]
     public float volume = 1;
