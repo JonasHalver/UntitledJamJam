@@ -241,9 +241,10 @@ GameObject:
   m_Component:
   - component: {fileID: 831695143}
   - component: {fileID: 831695142}
+  - component: {fileID: 831695144}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,6 +312,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &831695144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831695141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676269dcb05494147a34ca4497080eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &892008328
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29cde178497d2f4ebb020a74d9063c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goosePrefab: {fileID: 4322503397080446817, guid: 6e4442d7b99023043a6e13cc11d41966,
+  goosePrefab: {fileID: 1648047577453506030, guid: 766c56270c3b24a45aa7e9fd40046a12,
     type: 3}
   cam: {fileID: 1254998294}
   player: {fileID: 831695143}
@@ -402,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29cde178497d2f4ebb020a74d9063c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goosePrefab: {fileID: 4322503397080446817, guid: 6e4442d7b99023043a6e13cc11d41966,
+  goosePrefab: {fileID: 1648047577453506030, guid: 766c56270c3b24a45aa7e9fd40046a12,
     type: 3}
   cam: {fileID: 1254998294}
   player: {fileID: 831695143}
@@ -650,7 +663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29cde178497d2f4ebb020a74d9063c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goosePrefab: {fileID: 4322503397080446817, guid: 6e4442d7b99023043a6e13cc11d41966,
+  goosePrefab: {fileID: 1648047577453506030, guid: 766c56270c3b24a45aa7e9fd40046a12,
     type: 3}
   cam: {fileID: 1254998294}
   player: {fileID: 831695143}

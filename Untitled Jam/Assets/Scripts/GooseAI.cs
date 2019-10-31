@@ -9,6 +9,9 @@ public class GooseAI : MonoBehaviour
     public Seeker seeker;
     public Rigidbody2D rb;
 
+    public SpriteRenderer sr;
+    public Animator anim;
+
     [Range(1,10)]
     public float playerRadius = 3;
     public static float acceptableDistanceToPlayer = 3;
@@ -45,9 +48,11 @@ public class GooseAI : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         acceptableDistanceToPlayer = playerRadius;
         if (path != null)
         {
+
             IdleMovement();
             if (currentWayPoint >= path.vectorPath.Count)
             {
@@ -59,13 +64,14 @@ public class GooseAI : MonoBehaviour
             {
                 reachedEndOfPath = false;
             }
-
+            SpriteManager();
             direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPoint]);
             if (distance < nextWayPointDistance)
             {
                 currentWayPoint++;
             }
+            
         }
         
 
@@ -110,6 +116,22 @@ public class GooseAI : MonoBehaviour
             moveSpeedMod = 3;
         else
             moveSpeedMod = 1;
+    }
+
+    void SpriteManager()
+    {
+        if (currentWayPoint != path.vectorPath.Count - 1)
+        {
+            if (((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized.x < 0)
+                sr.flipX = true;
+            else
+                sr.flipX = false;
+
+            if (((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized.y < 0)
+                anim.SetBool("WalkingUp", false);
+            else
+                anim.SetBool("WalkingUp", true);
+        }
     }
 
     public void CreateIdleDestination()
