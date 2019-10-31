@@ -38,11 +38,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis("Horizontal") > 0 && !pushing)
         {
             sprite.localScale = new Vector3(1, 1, 1);
+            pushCollider.localScale = new Vector3(1, pushCollider.localScale.y, 1);
         }
 
         if (Input.GetAxis("Horizontal") < 0 && !pushing)
         {
             sprite.localScale = new Vector3(-1, 1, 1);
+            pushCollider.localScale = new Vector3(-1, pushCollider.localScale.y, 1);
         }
 
         if (Input.GetAxis("Vertical") > 0 && !pushing)
