@@ -7,9 +7,8 @@ public class SoundManager : MonoBehaviour
     public AudioSource low, medium, high, intense;
 
     [Range(1, 10)]
-    public static int intensity = 1;
-    [Range(1, 10)]
-    public int localIntensity = 1;
+    public static int intensity = 1;    
+
     [Range(0f, 1f)]
     public float volume = 1;
 
@@ -23,7 +22,6 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //intensity = localIntensity;
         switch (intensity)
         {
             case 1:

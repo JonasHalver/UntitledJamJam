@@ -7,7 +7,6 @@ TagManager:
   - PushPosition
   - PushObject
   - Manager
-  - Goose
   layers:
   - Default
   - TransparentFX
