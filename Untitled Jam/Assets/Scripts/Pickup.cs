@@ -20,7 +20,7 @@ public class Pickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Manager.collected += 1;
+            Checklist.checklist.SendMessage("Pickup", gameObject.name);
             Destroy(gameObject);
         }
     }
