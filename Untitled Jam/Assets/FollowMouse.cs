@@ -19,22 +19,24 @@ public class FollowMouse : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = cam.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward * 10;
+        //transform.position = cam.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward * 10;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Goose"))
         {
-            collision.GetComponent<SpriteRenderer>().enabled = true;
+            SpriteRenderer sr = collision.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
+            sr.enabled = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Goose"))
         {
-            collision.GetComponent<SpriteRenderer>().enabled = false;
+            SpriteRenderer sr = collision.transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>();
+            sr.enabled = false;
         }
     }
 }
