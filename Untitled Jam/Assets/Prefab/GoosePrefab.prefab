@@ -138,7 +138,11 @@ MonoBehaviour:
   maxWalkDistance: 10
   currentState: 0
   aS: {fileID: 1648047577453505937}
-  honk: {fileID: 8300000, guid: fa1c4de4a92bc024b90fb220e4dde1a1, type: 3}
+  honks:
+  - {fileID: 8300000, guid: fa1c4de4a92bc024b90fb220e4dde1a1, type: 3}
+  - {fileID: 8300000, guid: 3eee4247bdd20074383c5596a44ce8dd, type: 3}
+  - {fileID: 8300000, guid: 92bd0a170ba303f4c8c37bf7d547020b, type: 3}
+  - {fileID: 8300000, guid: ef471c7e3e4656848a35a4dc5d413ce6, type: 3}
 --- !u!50 &1648047577453505936
 Rigidbody2D:
   serializedVersion: 4
@@ -216,7 +220,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
