@@ -1,0 +1,397 @@
+fileFormatVersion: 2
+guid: 95c1dbaf78cb92c4ebbfecfebb2f42ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7220383625305083223
+    second: man front walk sprite-sheet_0
+  - first:
+      213: -154780902482436951
+    second: man front walk sprite-sheet_1
+  - first:
+      213: 6909389536737204341
+    second: man front walk sprite-sheet_2
+  - first:
+      213: 2551601532684763581
+    second: man front walk sprite-sheet_3
+  - first:
+      213: -45068564410332808
+    second: man front walk sprite-sheet_4
+  - first:
+      213: -6340676011333297882
+    second: man front walk sprite-sheet_5
+  - first:
+      213: -1988069211581715201
+    second: man front walk sprite-sheet_6
+  - first:
+      213: -736596634678349705
+    second: man front walk sprite-sheet_7
+  - first:
+      213: 940877791393944801
+    second: man front walk sprite-sheet_8
+  - first:
+      213: -5903448755573132724
+    second: man front walk sprite-sheet_9
+  - first:
+      213: 6198183343064532667
+    second: man front walk sprite-sheet_10
+  - first:
+      213: -5115297648358918508
+    second: man front walk sprite-sheet_11
+  - first:
+      213: -6954814417931018851
+    second: man front walk sprite-sheet_12
+  - first:
+      213: -4899334179000976818
+    second: man front walk sprite-sheet_13
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 0
+        width: 542
+        height: 2503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffc43dd9b8aa0948bd50db584c56819
+      internalID: 7220383625305083223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1881
+        width: 6
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a18ad023e637dd4eb24cc8514f0d97b
+      internalID: -154780902482436951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 391
+        height: 2503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73a042dc6ad13c4194b43e38da976aa
+      internalID: 6909389536737204341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1882
+        width: 5
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2526af71b51d9b644921a60f65e8a067
+      internalID: 2551601532684763581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 0
+        width: 378
+        height: 2503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea76525264782cb4385581f65250ba45
+      internalID: -45068564410332808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 1881
+        width: 8
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5aa24f84fd1caa42b1b2bf032303706
+      internalID: -6340676011333297882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 0
+        width: 438
+        height: 2503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1761c653a68182c40a41dab9426cc13d
+      internalID: -1988069211581715201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 1880
+        width: 5
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2da19fad6c8bb45808e20afb23f537
+      internalID: -736596634678349705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 0
+        width: 381
+        height: 2503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831be63f68d20104180e35249146e8d5
+      internalID: 940877791393944801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3379
+        y: 1879
+        width: 6
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68cd25ac45316024785a8aa7fc46cc3f
+      internalID: -5903448755573132724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3394
+        y: 0
+        width: 426
+        height: 2503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a39c43c02ccf9941812f76413d7aba8
+      internalID: 6198183343064532667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: man front walk sprite-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 3832
+        y: 1545
+        width: 11
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a48bcc25876d874f9ae3891a4099504
+      internalID: -5115297648358918508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
